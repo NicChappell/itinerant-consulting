@@ -26,6 +26,12 @@ const Contact = () => {
                 console.log(res)
             })
             .catch(err => console.log(err))
+
+        // reset state
+        setEmail('')
+        setMessage('')
+        setName('')
+        setPhone('')
     }
 
     return (
@@ -46,6 +52,7 @@ const Contact = () => {
                                     onChange={e => setName(e.target.value)}
                                     type="text"
                                     placeholder="Your Name"
+                                    value={name}
                                 />
                                 <p className="help-block text-danger"></p>
                             </div>
@@ -57,6 +64,7 @@ const Contact = () => {
                                     onChange={e => setEmail(e.target.value)}
                                     type="email"
                                     placeholder="Your Email"
+                                    value={email}
                                 />
                                 <p className="help-block text-danger"></p>
                             </div>
@@ -68,6 +76,7 @@ const Contact = () => {
                                     onChange={e => setPhone(e.target.value)}
                                     type="tel"
                                     placeholder="Your Phone"
+                                    value={phone}
                                 />
                                 <p className="help-block text-danger"></p>
                             </div>
@@ -79,6 +88,7 @@ const Contact = () => {
                                     id="message"
                                     onChange={e => setMessage(e.target.value)}
                                     placeholder="Your Message"
+                                    value={message}
                                 >
                                 </textarea>
                                 <p className="help-block text-danger"></p>
