@@ -22,16 +22,14 @@ const Contact = () => {
 
         // post payload
         axios.post('/contact', { ...payload })
-            .then(res => {
-                console.log(res)
+            .then(() => {
+                // reset state
+                setEmail('')
+                setMessage('')
+                setName('')
+                setPhone('')
             })
             .catch(err => console.log(err))
-
-        // reset state
-        setEmail('')
-        setMessage('')
-        setName('')
-        setPhone('')
     }
 
     return (
