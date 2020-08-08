@@ -53,10 +53,12 @@ app.post('/contact', function (req, res) {
     // send mail
     transporter.sendMail(mailOptions, function (err, res) {
         if (err) {
-            return res.status(500).json({ message: 'falied to send message', err })
+            res.status(500).json({ message: 'falied to send message', err })
         }
         res.status(200).json({ message: 'message sent' })
     })
+
+    return res.end()
 });
 
 // start server
